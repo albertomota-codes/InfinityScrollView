@@ -46,13 +46,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="16" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-Du-jON">
+                                <rect key="frame" x="6" y="106" width="191.5" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EDI-jG-W5b" firstAttribute="leading" secondItem="vVb-OA-Xgp" secondAttribute="trailing" constant="16" id="3Z7-sD-tMT"/>
                             <constraint firstItem="ZLf-sQ-qTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="5fZ-LV-7ls"/>
                             <constraint firstItem="zqV-6m-EQy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="5xV-Rh-cNZ"/>
+                            <constraint firstItem="2Hi-Du-jON" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Cey-QA-5y0"/>
                             <constraint firstItem="vVb-OA-Xgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="DWR-HG-Gwf"/>
+                            <constraint firstItem="2Hi-Du-jON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="FR0-5N-gCy"/>
                             <constraint firstItem="x6i-Dx-mNT" firstAttribute="leading" secondItem="ZLf-sQ-qTE" secondAttribute="trailing" constant="16" id="OhM-AS-wzY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqV-6m-EQy" secondAttribute="trailing" constant="8" id="YYM-5D-6gr"/>
                             <constraint firstItem="vVb-OA-Xgp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Yv6-0y-1eV"/>
@@ -63,6 +68,7 @@
                             <constraint firstItem="EDI-jG-W5b" firstAttribute="centerY" secondItem="vVb-OA-Xgp" secondAttribute="centerY" id="pJi-K4-QQ3"/>
                             <constraint firstItem="zqV-6m-EQy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rQT-Xf-Ewc"/>
                             <constraint firstItem="x6i-Dx-mNT" firstAttribute="centerY" secondItem="ZLf-sQ-qTE" secondAttribute="centerY" id="rRL-ed-tXP"/>
+                            <constraint firstItem="2Hi-Du-jON" firstAttribute="top" secondItem="ZLf-sQ-qTE" secondAttribute="bottom" constant="8" id="xyd-va-GlS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -171,7 +171,7 @@
 
     [self.elementContainerView addSubview:containerView];
     
-    //[label setBackgroundColor:[UIColor yellowColor]];
+    [[containerView mainLabel] setBackgroundColor:[UIColor lightGrayColor]];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;

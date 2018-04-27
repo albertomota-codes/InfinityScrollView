@@ -9,7 +9,6 @@
 #import "ViewController.h"
 //#import "InfiniteListControl.h"
 #import "InfiniteScrollView.h"
-#import "NSObject+NSString_Repeat.m"
 
 @interface ViewController ()
     //@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -28,7 +27,7 @@
     int limitSongs = 25;
 
     NSMutableArray *arrayOfStrings = [NSMutableArray arrayWithCapacity:limitSongs];
-    [[self infiniteScrollView] setStringsToPrint:@[@""]];
+    [[self infiniteScrollView] setStringsToPrint:@[@"Hello"]];
     [[self infiniteScrollView] setIsHorizontal:NO];
     [[self infiniteScrollView] setShowImages:YES];
     
@@ -54,6 +53,7 @@
                                                           
                                                           //NSArray *results = (NSArray *)jsonResponse[@"results"]
                                                           [arrayOfStrings removeAllObjects];
+                                                          
                                                           for ( NSDictionary *dict in (NSArray *)jsonResponse[@"results"] ){
 
                                                               
@@ -66,7 +66,7 @@
                                                           
                                                           [[self infiniteScrollView] setStringsToPrint:[NSArray arrayWithArray:arrayOfStrings]];
                                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                                              [[self infiniteScrollView] setNeedsLayout];
+                                                             [[self infiniteScrollView] reloadImage];
                                                           });
                                                           
                                                       }

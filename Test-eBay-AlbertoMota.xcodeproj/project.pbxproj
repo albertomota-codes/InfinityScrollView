@@ -23,7 +23,6 @@
 		D34917A620925EAC0058D4F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34917A520925EAC0058D4F5 /* QuartzCore.framework */; };
 		D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */; };
 		D34917B22092C0770058D4F5 /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B12092C0770058D4F5 /* ElementView.m */; };
-		D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +71,6 @@
 		D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
 		D34917B02092C0770058D4F5 /* ElementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElementView.h; sourceTree = "<group>"; };
 		D34917B12092C0770058D4F5 /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
-		D34917B32092F1010058D4F5 /* NSObject+NSString_Repeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSString_Repeat.h"; sourceTree = "<group>"; };
-		D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSString_Repeat.m"; sourceTree = "<group>"; };
 		D459D806A2C6CFE68CBD2573 /* Pods-Test-eBay-AlbertoMotaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaTests/Pods-Test-eBay-AlbertoMotaTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA376BD8EA7E338551918E89 /* Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaTests/Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E039BA1658BFDAA78054E6C1 /* Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaUITests/Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,8 +158,6 @@
 				D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */,
 				D34917B02092C0770058D4F5 /* ElementView.h */,
 				D34917B12092C0770058D4F5 /* ElementView.m */,
-				D34917B32092F1010058D4F5 /* NSObject+NSString_Repeat.h */,
-				D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */,
 				D31718EC209319BE00EF7279 /* ElementView.xib */,
 			);
 			path = "Test-eBay-AlbertoMota";
@@ -391,7 +386,6 @@
 			files = (
 				D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */,
 				D349176F209250760058D4F5 /* ViewController.m in Sources */,
-				D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */,
 				D349177A209250770058D4F5 /* main.m in Sources */,
 				D349176C209250760058D4F5 /* AppDelegate.m in Sources */,
 				D34917B22092C0770058D4F5 /* ElementView.m in Sources */,
