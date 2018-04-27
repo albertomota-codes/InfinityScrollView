@@ -17,16 +17,7 @@
 
 @implementation InfiniteScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
--(void) reloadImage{
-    
+-(void) reloadView{
     
     [[self visibleElements]removeAllObjects];
     for(UIView *view in [[self elementContainerView]subviews]){
@@ -47,23 +38,24 @@
 
     self.elementContainerView.frame = [self isHorizontal] ? CGRectMake(0, 0, self.contentSize.width, self.contentSize.height/2) : CGRectMake(0, 0, self.contentSize.width/2, self.contentSize.height) ;
     
-    
     [super layoutSubviews];
-    
     [self recenterIfNecessary];
     
     CGRect visibleBounds = [self convertRect:[self bounds] toView:self.elementContainerView];
     
-    if([self isHorizontal]){
-        CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
-        CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
-        [self tileLabelsFromMinX:minimumVisibleX toMaxX:maximumVisibleX];
-    }else{
-        CGFloat minimumVisibleY = CGRectGetMinY(visibleBounds);
-        CGFloat maximumVisibleY = CGRectGetMaxY(visibleBounds);
-        [self tileLabelsFromMinX:minimumVisibleY toMaxX:maximumVisibleY];
-    }
+//    if([self isHorizontal]){
+//        CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
+//        CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
+//        [self tileLabelsFromMinX:minimumVisibleX toMaxX:maximumVisibleX];
+//    }else{
+//        CGFloat minimumVisibleY = CGRectGetMinY(visibleBounds);
+//        CGFloat maximumVisibleY = CGRectGetMaxY(visibleBounds);
+//        [self tileLabelsFromMinX:minimumVisibleY toMaxX:maximumVisibleY];
+//    }
     
+    CGFloat minimumVisible = [self isHorizontal] ? CGRectGetMinX(visibleBounds) : CGRectGetMinY(visibleBounds);
+    CGFloat maximumVisible = [self isHorizontal] ? CGRectGetMaxX(visibleBounds) : CGRectGetMaxY(visibleBounds);
+    [self tileViewsFromMinX:minimumVisible toMaxX:maximumVisible];
     
 }
 
@@ -75,22 +67,18 @@
         
         self.contentSize = [self isHorizontal] ? CGSizeMake(5000, self.frame.size.height) : CGSizeMake(self.frame.size.width, 50000) ;
         
-        self.visibleElements = [[NSMutableArray alloc] init];
+        self.visibleElements        = [[NSMutableArray alloc] init];
+        self.elementContainerView   = [[UIView alloc]init];
         
-        self.elementContainerView = [[UIView alloc]init];
-        
-        self.elementContainerView.frame = [self isHorizontal] ? CGRectMake(0, 0, self.contentSize.width, self.contentSize.height/2) : CGRectMake(0, 0, self.contentSize.width/2, self.contentSize.height) ;
+        self.elementContainerView.frame = [self isHorizontal] ? CGRectMake(0, 0, self.contentSize.width, self.contentSize.height/[self numOFElementsVisibles]) : CGRectMake(0, 0, self.contentSize.width/[self numOFElementsVisibles], self.contentSize.height) ;
         
         [self addSubview:self.elementContainerView];
-        
-         [self.elementContainerView setUserInteractionEnabled:NO];
-        
+
+        [self.elementContainerView setUserInteractionEnabled:NO];
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
         [self setUserInteractionEnabled:YES];
-        
-        self.userInteractionEnabled = YES;
-        self.elementContainerView.userInteractionEnabled = YES;
+        [self.elementContainerView setUserInteractionEnabled:YES];
         
     }
     return self;
@@ -100,9 +88,10 @@
     
     CGPoint currentOffset = [self contentOffset];
     CGFloat contentWith   = [self contentSize].width;
-    CGFloat contentHeight   = [self contentSize].height;
+    CGFloat contentHeight = [self contentSize].height;
     CGFloat centerOffsetX = (contentWith - [self bounds].size.width)/2.0;
     CGFloat centerOffsetY = (contentHeight - [self bounds].size.height)/2.0;
+    
     CGFloat distanceFromCenterInX = fabs(currentOffset.x - centerOffsetX);
     CGFloat distanceFromCenterInY = fabs(currentOffset.y - centerOffsetY);
     
@@ -140,13 +129,12 @@
     
 }
 
-
 #pragma mark - Label Tiling
 
-- (UIView *)insertLabel
+- (UIView *)insertView
 {
- 
-    CGRect baseGCRect = CGRectMake(0, 0, [self isHorizontal] ? (self.frame.size.width/3.0) : self.frame.size.width, [self isHorizontal] ? self.frame.size.height : (self.frame.size.height/3.0));
+  
+    CGRect baseGCRect = CGRectMake(0, 0, [self isHorizontal] ? (self.frame.size.width/[self numOFElementsVisibles]) : self.frame.size.width, [self isHorizontal] ? self.frame.size.height : (self.frame.size.height/[self numOFElementsVisibles]));
     
     ElementView *containerView = [[[NSBundle mainBundle] loadNibNamed:@"ElementView" owner:self options:nil] objectAtIndex:0];
     
@@ -160,13 +148,40 @@
     
     //containerView.mainImage.isHidden = ![self showImages];
     [[containerView mainImage]setHidden:![self showImages]];
+    unsigned long indexForString = [[[self elementContainerView] subviews]count] % [[self dictArray]count];
+    NSDictionary *elementInfo = (NSDictionary *)[[self dictArray]objectAtIndex:indexForString];
     
-    unsigned long indexForString = [[[self elementContainerView] subviews]count] % [[self stringsToPrint]count];
+    if([self showImages]){
+        
+        
+        NSURL *url = [NSURL URLWithString:
+                      [elementInfo objectForKey:@"imageURl"]];
+        
+        // 2
+        NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
+                                                       downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                                                           // 3
+                                                           UIImage *downloadedImage = [UIImage imageWithData:
+                                                                                       [NSData dataWithContentsOfURL:location]];
+                                                           
+                                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                                               [[containerView mainImage]setImage:downloadedImage];
+                                                           });
+                                                           
+                                                       }];
+        
+        // 4
+        [downloadPhotoTask resume];
+    }
     
-    NSString *toShowString = (NSString *)[[self stringsToPrint] objectAtIndex:indexForString];
     
+
+    [containerView leadingConstraint].constant  = [self lateralMargins];
+    [containerView trailingConstraint].constant = [self lateralMargins];
+    [containerView topConstraint].constant      = [self topBottomMargins];
+    [containerView bottomConstraint].constant   = [self topBottomMargins];
     [[containerView mainLabel] setNumberOfLines:3];
-    [[containerView mainLabel] setText:toShowString != nil ? toShowString : @"ERRRRROOOOORR \n ERRRRROOOOORR\n ERRRRROOOOORR"];
+    [[containerView mainLabel] setText:elementInfo[@"text"] != nil ? elementInfo[@"text"] : @"ERRRRROOOOORR \n ERRRRROOOOORR\n ERRRRROOOOORR"];
     [[containerView mainLabel] setFont:[UIFont systemFontOfSize:20]];
 
     [self.elementContainerView addSubview:containerView];
@@ -180,10 +195,6 @@
     containerView.userInteractionEnabled = YES;
     [tapGestureRecognizer setDelegate:self];
     
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [containerView setNeedsLayout];
-//        [[containerView mainLabel] setNeedsUpdateConstraints];
-//    });
     
     return containerView;
 }
@@ -201,9 +212,9 @@
     });
 }
 
-- (CGFloat)placeNewLabelOnRight:(CGFloat)rightEdge
+- (CGFloat)placeNewViewOnRight:(CGFloat)rightEdge
 {
-    UIView *insertedView = [self insertLabel];
+    UIView *insertedView = [self insertView];
     [self.visibleElements addObject:insertedView]; // add rightmost label at the end of the array
     
     CGRect frame = [insertedView frame];
@@ -221,9 +232,9 @@
     
 }
 
-- (CGFloat)placeNewLabelOnLeft:(CGFloat)leftEdge
+- (CGFloat)placeNewViewOnLeft:(CGFloat)leftEdge
 {
-    UIView *insertedView = [self insertLabel];
+    UIView *insertedView = [self insertView];
     [self.visibleElements insertObject:insertedView atIndex:0]; // add leftmost label at the beginning of the array
     
     CGRect frame = [insertedView frame];
@@ -242,58 +253,54 @@
     return [self isHorizontal] ? CGRectGetMinX(frame) : CGRectGetMinY(frame);
 }
 
-- (void)tileLabelsFromMinX:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX
+- (void)tileViewsFromMinX:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX
 {
-    // the upcoming tiling logic depends on there already being at least one label in the visibleLabels array, so
-    // to kick off the tiling we need to make sure there's at least one label
+
     if ([self.visibleElements count] == 0)
     {
-        [self placeNewLabelOnRight:minimumVisibleX];
+        [self placeNewViewOnRight:minimumVisibleX];
     }
     
-    // add labels that are missing on right side
-    UIView *lastLabel = [self.visibleElements lastObject];
-    CGFloat rightEdge = [self isHorizontal] ?  CGRectGetMaxX([lastLabel frame]) : CGRectGetMaxY([lastLabel frame]);
+    UIView *lastView = [self.visibleElements lastObject];
+    CGFloat rightEdge = [self isHorizontal] ?  CGRectGetMaxX([lastView frame]) : CGRectGetMaxY([lastView frame]);
     while (rightEdge < maximumVisibleX)
     {
-        rightEdge = [self placeNewLabelOnRight:rightEdge];
+        rightEdge = [self placeNewViewOnRight:rightEdge];
     }
     
-    // add labels that are missing on left side
-    UIView *firstLabel = self.visibleElements[0];
-    CGFloat leftEdge = [self isHorizontal] ? CGRectGetMinX([firstLabel frame]) : CGRectGetMinY([firstLabel frame]) ;
+    UIView *firstView = self.visibleElements[0];
+    CGFloat leftEdge = [self isHorizontal] ? CGRectGetMinX([firstView frame]) : CGRectGetMinY([firstView frame]) ;
     while (leftEdge > minimumVisibleX)
     {
-        leftEdge = [self placeNewLabelOnLeft:leftEdge];
+        leftEdge = [self placeNewViewOnLeft:leftEdge];
     }
     
-    // remove labels that have fallen off right edge
-    lastLabel = [self.visibleElements lastObject];
-    while ([lastLabel frame].origin.x > maximumVisibleX)
+    lastView = [self.visibleElements lastObject];
+    while ([lastView frame].origin.x > maximumVisibleX)
     {
-        [lastLabel removeFromSuperview];
+        [lastView removeFromSuperview];
         [self.visibleElements removeLastObject];
-        lastLabel = [self.visibleElements lastObject];
+        lastView = [self.visibleElements lastObject];
     }
     
     // remove labels that have fallen off left edge
     if ([self.visibleElements count] == 0){
         
-        firstLabel = self.visibleElements[0];
+        firstView = self.visibleElements[0];
         if([self isHorizontal]){
-            while (CGRectGetMaxX([firstLabel frame]) < minimumVisibleX)
+            while (CGRectGetMaxX([firstView frame]) < minimumVisibleX)
             {
-                [firstLabel removeFromSuperview];
+                [firstView removeFromSuperview];
                 [self.visibleElements removeObjectAtIndex:0];
-                firstLabel = self.visibleElements[0];
+                firstView = self.visibleElements[0];
             }
         }else{
             
-            while (CGRectGetMaxY([firstLabel frame]) < minimumVisibleX)
+            while (CGRectGetMaxY([firstView frame]) < minimumVisibleX)
             {
-                [firstLabel removeFromSuperview];
+                [firstView removeFromSuperview];
                 [self.visibleElements removeObjectAtIndex:0];
-                firstLabel = self.visibleElements[0];
+                firstView = self.visibleElements[0];
             }
             
         }
