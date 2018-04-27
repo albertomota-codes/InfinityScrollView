@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  InfiniteEBayCollectionViewCell.m
 //  Test-eBay-AlbertoMota
 //
 //  Created by Al on 4/26/18.
 //  Copyright © 2018 Alberto Mota. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "InfiniteEBayCollectionViewCell.h"
 
-@interface ViewController : UIViewController<UIGestureRecognizerDelegate>
-
+@implementation InfiniteEBayCollectionViewCell
 
 @end
-

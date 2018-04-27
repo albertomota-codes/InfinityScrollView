@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,52 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqV-6m-EQy" customClass="InfiniteScrollView">
+                                <rect key="frame" x="8" y="325.5" width="359" height="333.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-OA-Xgp">
+                                <rect key="frame" x="8" y="28" width="51" height="31"/>
+                                <connections>
+                                    <action selector="horizontalValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gSg-1b-Ra4"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDI-jG-W5b">
+                                <rect key="frame" x="73" y="33" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EDI-jG-W5b" firstAttribute="leading" secondItem="vVb-OA-Xgp" secondAttribute="trailing" constant="16" id="3Z7-sD-tMT"/>
+                            <constraint firstItem="zqV-6m-EQy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="5xV-Rh-cNZ"/>
+                            <constraint firstItem="vVb-OA-Xgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="DWR-HG-Gwf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqV-6m-EQy" secondAttribute="trailing" constant="8" id="YYM-5D-6gr"/>
+                            <constraint firstItem="vVb-OA-Xgp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Yv6-0y-1eV"/>
+                            <constraint firstItem="EDI-jG-W5b" firstAttribute="leading" secondItem="vVb-OA-Xgp" secondAttribute="trailing" constant="16" id="avt-BH-3Er"/>
+                            <constraint firstItem="zqV-6m-EQy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="fyX-zY-sUI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zqV-6m-EQy" secondAttribute="bottom" constant="8" id="gf7-Oc-bY6"/>
+                            <constraint firstItem="EDI-jG-W5b" firstAttribute="centerY" secondItem="vVb-OA-Xgp" secondAttribute="centerY" id="pJi-K4-QQ3"/>
+                            <constraint firstItem="zqV-6m-EQy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rQT-Xf-Ewc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="infiniteScrollView" destination="zqV-6m-EQy" id="AV1-JE-dQb"/>
+                        <outlet property="isVerticalSwitch" destination="vVb-OA-Xgp" id="ugq-P1-0WF"/>
+                        <outlet property="testLabel" destination="EDI-jG-W5b" id="d4X-hE-hrk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="29.23538230884558"/>
         </scene>
     </scenes>
 </document>

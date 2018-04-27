@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7822E073B936F9B6E22DE4CC /* libPods-Test-eBay-AlbertoMotaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAD8342174BFBDF18045731 /* libPods-Test-eBay-AlbertoMotaTests.a */; };
+		7DF66CD74FD085B5145E6C10 /* libPods-Test-eBay-AlbertoMotaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169E6DD1F9FAA6CD994D26A7 /* libPods-Test-eBay-AlbertoMotaUITests.a */; };
+		B2925895D667CCFC238ADA0A /* libPods-Test-eBay-AlbertoMota.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E639DE05FC9CFD043627174A /* libPods-Test-eBay-AlbertoMota.a */; };
+		D31718EB209304E400EF7279 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D31718EA209304E400EF7279 /* libAFNetworking.a */; };
 		D349176C209250760058D4F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D349176B209250760058D4F5 /* AppDelegate.m */; };
 		D349176F209250760058D4F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D349176E209250760058D4F5 /* ViewController.m */; };
 		D3491772209250760058D4F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3491770209250760058D4F5 /* Main.storyboard */; };
@@ -15,6 +19,11 @@
 		D349177A209250770058D4F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3491779209250770058D4F5 /* main.m */; };
 		D3491784209250770058D4F5 /* Test_eBay_AlbertoMotaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3491783209250770058D4F5 /* Test_eBay_AlbertoMotaTests.m */; };
 		D349178F209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D349178E209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m */; };
+		D34917A620925EAC0058D4F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34917A520925EAC0058D4F5 /* QuartzCore.framework */; };
+		D34917AC20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */; };
+		D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */; };
+		D34917B22092C0770058D4F5 /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B12092C0770058D4F5 /* ElementView.m */; };
+		D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048294C0A27F54E5A81A88FA /* Pods-Test-eBay-AlbertoMota.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMota.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMota/Pods-Test-eBay-AlbertoMota.debug.xcconfig"; sourceTree = "<group>"; };
+		0AAD8342174BFBDF18045731 /* libPods-Test-eBay-AlbertoMotaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-eBay-AlbertoMotaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		169E6DD1F9FAA6CD994D26A7 /* libPods-Test-eBay-AlbertoMotaUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-eBay-AlbertoMotaUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EFB1FC173DF77301835EB79 /* Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaUITests/Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		249AB7B08B1B00CE95BC8BB6 /* Pods-Test-eBay-AlbertoMota.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMota.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMota/Pods-Test-eBay-AlbertoMota.release.xcconfig"; sourceTree = "<group>"; };
+		D31718EA209304E400EF7279 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3491767209250760058D4F5 /* Test-eBay-AlbertoMota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-eBay-AlbertoMota.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D349176A209250760058D4F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D349176B209250760058D4F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +66,19 @@
 		D349178A209250770058D4F5 /* Test-eBay-AlbertoMotaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test-eBay-AlbertoMotaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D349178E209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_eBay_AlbertoMotaUITests.m; sourceTree = "<group>"; };
 		D3491790209250770058D4F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34917A520925EAC0058D4F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D34917AA20926A970058D4F5 /* InfiniteEBayCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteEBayCollectionViewCell.h; sourceTree = "<group>"; };
+		D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteEBayCollectionViewCell.m; sourceTree = "<group>"; };
+		D34917AD2092A8D60058D4F5 /* InfiniteScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
+		D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
+		D34917B02092C0770058D4F5 /* ElementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElementView.h; sourceTree = "<group>"; };
+		D34917B12092C0770058D4F5 /* ElementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementView.m; sourceTree = "<group>"; };
+		D34917B32092F1010058D4F5 /* NSObject+NSString_Repeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSString_Repeat.h"; sourceTree = "<group>"; };
+		D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSString_Repeat.m"; sourceTree = "<group>"; };
+		D459D806A2C6CFE68CBD2573 /* Pods-Test-eBay-AlbertoMotaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaTests/Pods-Test-eBay-AlbertoMotaTests.release.xcconfig"; sourceTree = "<group>"; };
+		DA376BD8EA7E338551918E89 /* Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaTests/Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E039BA1658BFDAA78054E6C1 /* Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaUITests/Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E639DE05FC9CFD043627174A /* libPods-Test-eBay-AlbertoMota.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-eBay-AlbertoMota.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31718EB209304E400EF7279 /* libAFNetworking.a in Frameworks */,
+				D34917A620925EAC0058D4F5 /* QuartzCore.framework in Frameworks */,
+				B2925895D667CCFC238ADA0A /* libPods-Test-eBay-AlbertoMota.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7822E073B936F9B6E22DE4CC /* libPods-Test-eBay-AlbertoMotaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +104,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF66CD74FD085B5145E6C10 /* libPods-Test-eBay-AlbertoMotaUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BBB95432B629C4ECFCFBD57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				048294C0A27F54E5A81A88FA /* Pods-Test-eBay-AlbertoMota.debug.xcconfig */,
+				249AB7B08B1B00CE95BC8BB6 /* Pods-Test-eBay-AlbertoMota.release.xcconfig */,
+				DA376BD8EA7E338551918E89 /* Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig */,
+				D459D806A2C6CFE68CBD2573 /* Pods-Test-eBay-AlbertoMotaTests.release.xcconfig */,
+				E039BA1658BFDAA78054E6C1 /* Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig */,
+				1EFB1FC173DF77301835EB79 /* Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D349175E209250760058D4F5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +131,8 @@
 				D3491782209250770058D4F5 /* Test-eBay-AlbertoMotaTests */,
 				D349178D209250770058D4F5 /* Test-eBay-AlbertoMotaUITests */,
 				D3491768209250760058D4F5 /* Products */,
+				D34917A420925EAC0058D4F5 /* Frameworks */,
+				9BBB95432B629C4ECFCFBD57 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +158,14 @@
 				D3491775209250770058D4F5 /* LaunchScreen.storyboard */,
 				D3491778209250770058D4F5 /* Info.plist */,
 				D3491779209250770058D4F5 /* main.m */,
+				D34917AA20926A970058D4F5 /* InfiniteEBayCollectionViewCell.h */,
+				D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */,
+				D34917AD2092A8D60058D4F5 /* InfiniteScrollView.h */,
+				D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */,
+				D34917B02092C0770058D4F5 /* ElementView.h */,
+				D34917B12092C0770058D4F5 /* ElementView.m */,
+				D34917B32092F1010058D4F5 /* NSObject+NSString_Repeat.h */,
+				D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */,
 			);
 			path = "Test-eBay-AlbertoMota";
 			sourceTree = "<group>";
@@ -132,6 +188,18 @@
 			path = "Test-eBay-AlbertoMotaUITests";
 			sourceTree = "<group>";
 		};
+		D34917A420925EAC0058D4F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D31718EA209304E400EF7279 /* libAFNetworking.a */,
+				D34917A520925EAC0058D4F5 /* QuartzCore.framework */,
+				E639DE05FC9CFD043627174A /* libPods-Test-eBay-AlbertoMota.a */,
+				0AAD8342174BFBDF18045731 /* libPods-Test-eBay-AlbertoMotaTests.a */,
+				169E6DD1F9FAA6CD994D26A7 /* libPods-Test-eBay-AlbertoMotaUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3491793209250770058D4F5 /* Build configuration list for PBXNativeTarget "Test-eBay-AlbertoMota" */;
 			buildPhases = (
+				83188FEC86BA59D02F632581 /* [CP] Check Pods Manifest.lock */,
 				D3491763209250760058D4F5 /* Sources */,
 				D3491764209250760058D4F5 /* Frameworks */,
 				D3491765209250760058D4F5 /* Resources */,
@@ -156,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3491796209250770058D4F5 /* Build configuration list for PBXNativeTarget "Test-eBay-AlbertoMotaTests" */;
 			buildPhases = (
+				608F1F398C10B0E992FC06E8 /* [CP] Check Pods Manifest.lock */,
 				D349177B209250770058D4F5 /* Sources */,
 				D349177C209250770058D4F5 /* Frameworks */,
 				D349177D209250770058D4F5 /* Resources */,
@@ -174,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3491799209250770058D4F5 /* Build configuration list for PBXNativeTarget "Test-eBay-AlbertoMotaUITests" */;
 			buildPhases = (
+				FB6510B0CEE31768DE8BAD3E /* [CP] Check Pods Manifest.lock */,
 				D3491786209250770058D4F5 /* Sources */,
 				D3491787209250770058D4F5 /* Frameworks */,
 				D3491788209250770058D4F5 /* Resources */,
@@ -257,14 +328,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		608F1F398C10B0E992FC06E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test-eBay-AlbertoMotaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83188FEC86BA59D02F632581 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test-eBay-AlbertoMota-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6510B0CEE31768DE8BAD3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test-eBay-AlbertoMotaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3491763209250760058D4F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34917AC20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m in Sources */,
+				D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */,
 				D349176F209250760058D4F5 /* ViewController.m in Sources */,
+				D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */,
 				D349177A209250770058D4F5 /* main.m in Sources */,
 				D349176C209250760058D4F5 /* AppDelegate.m in Sources */,
+				D34917B22092C0770058D4F5 /* ElementView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +563,7 @@
 		};
 		D3491794209250770058D4F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048294C0A27F54E5A81A88FA /* Pods-Test-eBay-AlbertoMota.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +581,7 @@
 		};
 		D3491795209250770058D4F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 249AB7B08B1B00CE95BC8BB6 /* Pods-Test-eBay-AlbertoMota.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +599,7 @@
 		};
 		D3491797209250770058D4F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA376BD8EA7E338551918E89 /* Pods-Test-eBay-AlbertoMotaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +619,7 @@
 		};
 		D3491798209250770058D4F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D459D806A2C6CFE68CBD2573 /* Pods-Test-eBay-AlbertoMotaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +639,7 @@
 		};
 		D349179A209250770058D4F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E039BA1658BFDAA78054E6C1 /* Pods-Test-eBay-AlbertoMotaUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SW5358BQEF;
@@ -521,6 +658,7 @@
 		};
 		D349179B209250770058D4F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EFB1FC173DF77301835EB79 /* Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SW5358BQEF;
