@@ -10,5 +10,7 @@
 
 @interface InfiniteScrollView : UIScrollView<UIGestureRecognizerDelegate>
     @property bool isHorizontal;
+    @property bool showImages;
     @property (strong,nonatomic) NSArray *stringsToPrint;
+    -(void) reloadImage;
 @end

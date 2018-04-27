@@ -16,44 +16,26 @@
 @property (weak, nonatomic) IBOutlet UISwitch *isVerticalSwitch;
 @property (strong,nonatomic) NSArray *elements;
 @property (weak, nonatomic) IBOutlet InfiniteScrollView *infiniteScrollView;
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *showImageSwitch;
 
 @end
 
 @implementation ViewController
 
-    //InfiniteListControl* _infiniteList;
-//const UIEdgeInsets sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0);
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     int limitSongs = 25;
-//    int a   = 65;
-//    int end = 91;
-//    int initAlphabet = a;
-//    NSMutableArray *arrayOfStrings = [NSMutableArray arrayWithCapacity:end-a];
-//
-//    for (; a < end; a++) {
-//
-//        NSString *line = [[NSString stringWithFormat:@"%c",(char)a] repeatTimes:10];
-//        NSString *paragraph = [[NSString stringWithFormat:@"%@\n",line] repeatTimes:2];
-//
-//        [arrayOfStrings insertObject:[NSString stringWithFormat:@"%@%@",paragraph,line]  atIndex:(a-initAlphabet)];
-//
-//    }
-//
-//    [[self infiniteScrollView] setStringsToPrint:[NSArray arrayWithArray:arrayOfStrings]];
 
-    
     NSMutableArray *arrayOfStrings = [NSMutableArray arrayWithCapacity:limitSongs];
     [[self infiniteScrollView] setStringsToPrint:@[@""]];
     [[self infiniteScrollView] setIsHorizontal:NO];
+    [[self infiniteScrollView] setShowImages:YES];
     
     
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
                                           dataTaskWithURL:[NSURL
-                                                           URLWithString:@"https://itunes.apple.com/search?term=jack&limit=25"]
+                                                           URLWithString: [NSString stringWithFormat:@"https://itunes.apple.com/search?term=jack&limit=%d",limitSongs]]
                                           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                               // 4: Handle response here
 
@@ -102,22 +84,22 @@
 - (IBAction)horizontalValueChanged:(id)sender {
     
     
-    [[self infiniteScrollView] setIsHorizontal:[(UISwitch *)sender isOn]];
+   [[self infiniteScrollView] setIsHorizontal:[(UISwitch *)sender isOn]];
     
+   [[self infiniteScrollView] reloadImage];
     
+}
+- (IBAction)showImageSwitchChanged:(id)sender {
     
-    [self infiniteScrollView].contentOffset = CGPointMake([self infiniteScrollView].contentSize.width/2, [self infiniteScrollView].contentSize.height/2);
+    [[self infiniteScrollView] setShowImages:[(UISwitch *)sender isOn]];
+    [[self infiniteScrollView] reloadImage];
     
-    [[self infiniteScrollView] setNeedsLayout];
-    
-   
     
 }
 
 - (void) labelTapped: (UITapGestureRecognizer *)recognizer
 {
     //Code to handle the gesture
-    NSLog(@"Amonos tapeo una view");
     UILabel *labelTapped = (UILabel *)[recognizer view];
     
     [labelTapped setAdjustsFontSizeToFitWidth:YES];

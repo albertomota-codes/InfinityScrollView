@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ElementView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+
+
 
 @end

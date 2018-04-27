@@ -11,6 +11,7 @@
 		7DF66CD74FD085B5145E6C10 /* libPods-Test-eBay-AlbertoMotaUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169E6DD1F9FAA6CD994D26A7 /* libPods-Test-eBay-AlbertoMotaUITests.a */; };
 		B2925895D667CCFC238ADA0A /* libPods-Test-eBay-AlbertoMota.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E639DE05FC9CFD043627174A /* libPods-Test-eBay-AlbertoMota.a */; };
 		D31718EB209304E400EF7279 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D31718EA209304E400EF7279 /* libAFNetworking.a */; };
+		D31718ED209319BE00EF7279 /* ElementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31718EC209319BE00EF7279 /* ElementView.xib */; };
 		D349176C209250760058D4F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D349176B209250760058D4F5 /* AppDelegate.m */; };
 		D349176F209250760058D4F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D349176E209250760058D4F5 /* ViewController.m */; };
 		D3491772209250760058D4F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3491770209250760058D4F5 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		D3491784209250770058D4F5 /* Test_eBay_AlbertoMotaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3491783209250770058D4F5 /* Test_eBay_AlbertoMotaTests.m */; };
 		D349178F209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D349178E209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m */; };
 		D34917A620925EAC0058D4F5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34917A520925EAC0058D4F5 /* QuartzCore.framework */; };
-		D34917AC20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */; };
 		D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */; };
 		D34917B22092C0770058D4F5 /* ElementView.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B12092C0770058D4F5 /* ElementView.m */; };
 		D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */; };
@@ -50,6 +50,7 @@
 		1EFB1FC173DF77301835EB79 /* Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMotaUITests/Pods-Test-eBay-AlbertoMotaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		249AB7B08B1B00CE95BC8BB6 /* Pods-Test-eBay-AlbertoMota.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-eBay-AlbertoMota.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test-eBay-AlbertoMota/Pods-Test-eBay-AlbertoMota.release.xcconfig"; sourceTree = "<group>"; };
 		D31718EA209304E400EF7279 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31718EC209319BE00EF7279 /* ElementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementView.xib; sourceTree = "<group>"; };
 		D3491767209250760058D4F5 /* Test-eBay-AlbertoMota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-eBay-AlbertoMota.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D349176A209250760058D4F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D349176B209250760058D4F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,8 +68,6 @@
 		D349178E209250770058D4F5 /* Test_eBay_AlbertoMotaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_eBay_AlbertoMotaUITests.m; sourceTree = "<group>"; };
 		D3491790209250770058D4F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D34917A520925EAC0058D4F5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D34917AA20926A970058D4F5 /* InfiniteEBayCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteEBayCollectionViewCell.h; sourceTree = "<group>"; };
-		D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteEBayCollectionViewCell.m; sourceTree = "<group>"; };
 		D34917AD2092A8D60058D4F5 /* InfiniteScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
 		D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
 		D34917B02092C0770058D4F5 /* ElementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ElementView.h; sourceTree = "<group>"; };
@@ -158,14 +157,13 @@
 				D3491775209250770058D4F5 /* LaunchScreen.storyboard */,
 				D3491778209250770058D4F5 /* Info.plist */,
 				D3491779209250770058D4F5 /* main.m */,
-				D34917AA20926A970058D4F5 /* InfiniteEBayCollectionViewCell.h */,
-				D34917AB20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m */,
 				D34917AD2092A8D60058D4F5 /* InfiniteScrollView.h */,
 				D34917AE2092A8D60058D4F5 /* InfiniteScrollView.m */,
 				D34917B02092C0770058D4F5 /* ElementView.h */,
 				D34917B12092C0770058D4F5 /* ElementView.m */,
 				D34917B32092F1010058D4F5 /* NSObject+NSString_Repeat.h */,
 				D34917B42092F1010058D4F5 /* NSObject+NSString_Repeat.m */,
+				D31718EC209319BE00EF7279 /* ElementView.xib */,
 			);
 			path = "Test-eBay-AlbertoMota";
 			sourceTree = "<group>";
@@ -307,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3491777209250770058D4F5 /* LaunchScreen.storyboard in Resources */,
+				D31718ED209319BE00EF7279 /* ElementView.xib in Resources */,
 				D3491774209250770058D4F5 /* Assets.xcassets in Resources */,
 				D3491772209250760058D4F5 /* Main.storyboard in Resources */,
 			);
@@ -390,7 +389,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D34917AC20926A970058D4F5 /* InfiniteEBayCollectionViewCell.m in Sources */,
 				D34917AF2092A8D60058D4F5 /* InfiniteScrollView.m in Sources */,
 				D349176F209250760058D4F5 /* ViewController.m in Sources */,
 				D34917B52092F1010058D4F5 /* NSObject+NSString_Repeat.m in Sources */,
